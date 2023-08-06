@@ -72,8 +72,11 @@
 
     if (count($filmes) > 0) {
       foreach ($filmes as $filme) {
-        echo '<div class="filme1">' . $filme["nome"];
-        echo "<a class='excluir' href='filme.php?idfilme={$filme["id"]}'>Comprar</a>";
+       echo '<div class="filme1">' . $filme["nome"];
+        echo '<form method="GET" action="filme.php">';
+        echo '<input name="idfilme" type="hidden" value="' . $filme['id'] . '"/>';
+        echo '<button class="button button3" name="alterar" type="submit">Alterar</button>';
+        echo '</form>';
         echo '</div>';
       }
     }
